@@ -19,15 +19,12 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Welcome...", Toast.LENGTH_SHORT).show()
 
         Handler(Looper.getMainLooper()).postDelayed({/*
-            if (FirebaseDatabase.getInstance().currentUser != null) {
-                // The user is already logged in, so redirect to the home activity
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
-            } else {*/
-                // The user is not logged in, so redirect to the sign up activity
-                startActivity(Intent(this, GalActivity::class.java))
-                finish()
-         //   }
-        },3000)
+            if (FirebaseAuth.getInstance().currentUser== null)
+                startActivity(Intent(this, GalActivity::class.java))             //not login
+            else
+                startActivity(Intent(this, HomeActivity::class.java))   */               //redirect to home activity
+           startActivity(Intent(this, GalActivity::class.java))
+            finish()
+        }, 3000)
     }
 }

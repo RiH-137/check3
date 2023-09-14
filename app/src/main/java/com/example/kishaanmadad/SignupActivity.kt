@@ -25,9 +25,9 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)
         }*/
 
-        val log_Btn: TextView? = findViewById(R.id.login_page1)
-        if (log_Btn != null) {
-            log_Btn.setOnClickListener{
+        val log: TextView? = findViewById(R.id.login_page1)
+        if (log != null) {
+            log.setOnClickListener{
                 val intent= Intent(this, LoginActivity::class.java)
                 startActivity(intent)
 

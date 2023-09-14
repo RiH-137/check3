@@ -9,8 +9,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email"
-        android:layout_width="388dp"
-        android:layout_height="54dp"
+        android:layout_width="338dp"
+        android:layout_height="73dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:hint="Email"
@@ -29,8 +29,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="388dp"
-        android:layout_height="54dp"
+        android:layout_width="338dp"
+        android:layout_height="73dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="20dp"
