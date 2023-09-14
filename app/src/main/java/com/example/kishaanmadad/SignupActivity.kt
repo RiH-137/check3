@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DatabaseReference
@@ -17,39 +18,48 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val logbtnn=findViewById<Button>(R.id.login_page)
+        /* val log_btn=findViewById<TextView>(R.id.login_page1)
 
-        logbtnn.setOnClickListener{
+        log_btn.setOnClickListener{
             val intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
-        val signButton = findViewById<Button>(R.id.signupBtn)
-        val etname = findViewById<TextInputLayout>(R.id.name)
-        val etemail = findViewById<TextInputLayout>(R.id.email)
-        val etpassword = findViewById<TextInputLayout>(R.id.password)
+        val log_Btn: TextView? = findViewById(R.id.login_page1)
+        if (log_Btn != null) {
+            log_Btn.setOnClickListener{
+                val intent= Intent(this, LoginActivity::class.java)
+                startActivity(intent)
 
 
-        signButton.setOnClickListener {
-            val UserName = etname.editText?.text.toString().trim()
-            val email = etemail.editText?.text.toString().trim()
-            val password = etpassword.editText?.text.toString().trim()
+                val signButton = findViewById<Button>(R.id.signupBtn)
+                val etname = findViewById<TextInputLayout>(R.id.name)
+                val etemail = findViewById<TextInputLayout>(R.id.email)
+                val etpassword = findViewById<TextInputLayout>(R.id.password)
 
-            if (UserName.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(
-                    this@SignupActivity,
-                    "Please fill in all required information",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                val user=User(UserName, email,password)
-                database= FirebaseDatabase.getInstance().getReference("Users")
-                database.child(UserName).setValue(user).addOnSuccessListener {
-                    Toast.makeText(this, "Registration Successful...", Toast.LENGTH_SHORT).show()
-                }.addOnSuccessListener {
-                    Toast.makeText(this,"Failed! Please try again...", Toast.LENGTH_SHORT).show()
+
+                signButton.setOnClickListener {
+                    val UserName = etname.editText?.text.toString().trim()
+                    val email = etemail.editText?.text.toString().trim()
+                    val password = etpassword.editText?.text.toString().trim()
+
+                    if (UserName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                        Toast.makeText(
+                            this@SignupActivity,
+                            "Please fill in all required information",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        val user=User(UserName, email,password)
+                        database= FirebaseDatabase.getInstance().getReference("Users")
+                        database.child(UserName).setValue(user).addOnSuccessListener {
+                            Toast.makeText(this, "Registration Successful...", Toast.LENGTH_SHORT).show()
+                        }.addOnSuccessListener {
+                            Toast.makeText(this,"Failed! Please try again...", Toast.LENGTH_SHORT).show()
+                        }
+
+                    }
                 }
-
             }
         }
     }

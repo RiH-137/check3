@@ -116,7 +116,7 @@
         android:layout_width="326dp"
         android:layout_height="59dp"
         android:layout_marginBottom="156dp"
-        android:text="Login In"
+        android:text="Log In"
         android:elevation="20dp"
         android:textSize="25sp"
         android:textColor="@color/mahendi"

@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor= Color.TRANSPARENT
         Toast.makeText(this, "Welcome...", Toast.LENGTH_SHORT).show()
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (FirebaseDatabase.getInstance().CurrentUser != null) {
+        Handler(Looper.getMainLooper()).postDelayed({/*
+            if (FirebaseDatabase.getInstance().currentUser != null) {
                 // The user is already logged in, so redirect to the home activity
                 startActivity(Intent(this, HomeActivity::class.java))
                 finish()
-            } else {
+            } else {*/
                 // The user is not logged in, so redirect to the sign up activity
-                startActivity(Intent(this, SignupActivity::class.java))
+                startActivity(Intent(this, GalActivity::class.java))
                 finish()
          //   }
         },3000)
