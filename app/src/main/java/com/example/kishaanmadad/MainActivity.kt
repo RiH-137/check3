@@ -18,13 +18,14 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor= Color.TRANSPARENT
         Toast.makeText(this, "Welcome...", Toast.LENGTH_SHORT).show()
 
-        Handler(Looper.getMainLooper()).postDelayed({/*
-            if (FirebaseAuth.getInstance().currentUser== null)
+        Handler(Looper.getMainLooper()).postDelayed({
+            if
+                (FirebaseAuth.getInstance().currentUser == null)
                 startActivity(Intent(this, GalActivity::class.java))             //not login
             else
-                startActivity(Intent(this, HomeActivity::class.java))   */               //redirect to home activity
+                startActivity(Intent(this, HomeActivity::class.java))                  //redirect to home activity
            startActivity(Intent(this, GalActivity::class.java))
             finish()
-        }, 3000)
+        }, 2000)
     }
 }
